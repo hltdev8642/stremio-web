@@ -9,6 +9,10 @@
         "start": "webpack serve --mode development",
         "start-prod": "webpack serve --mode production",
         "build": "webpack --mode production",
+        "serve": "node http_server.js",
+        "serve:with-service": "cross-env START_STREAMING_SERVER=1 node http_server.js",
+        "serve:with-stub": "cross-env START_STREAMING_STUB=1 node http_server.js",
+    "serve:with-service-attached": "cross-env START_STREAMING_SERVER=1 STREAMING_SERVER_ATTACHED=1 START_STREAMING_STUB=0 STREAMING_SERVER_BINARY='C:\\Users\\jared\\Desktop\\stremio-web-1\\bin\\win32\\stremio-service.exe' node http_server.js",
         "test": "jest",
         "lint": "eslint src",
         "scan-translations": "npx jest ./tests/i18nScan.test.js"
@@ -83,6 +87,7 @@
         "webpack-cli": "5.1.4",
         "webpack-dev-server": "^5.1.0",
         "webpack-pwa-manifest": "^4.3.0",
-        "workbox-webpack-plugin": "^7.3.0"
+        "workbox-webpack-plugin": "^7.3.0",
+        "cross-env": "7.0.3"
     }
 }
